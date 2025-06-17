@@ -1,0 +1,7 @@
+The Factory Pattern is a creational design pattern that provides a way to create objects without exposing the creation logic to the client.
+Instead of using new, clients call a factory method to get the object they need. 
+This helps achieve loose coupling and makes the code more flexible and scalable.
+
+Exercise 2: Factory Method Pattern
+You are developing a document management system that should support the creation of different document types such as Word, PDF, and Excel.
+Use the Factory Method Design Pattern to design a flexible solution that allows the system to create objects of these document types without modifying the client code.
