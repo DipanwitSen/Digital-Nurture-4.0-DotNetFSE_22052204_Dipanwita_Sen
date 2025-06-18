@@ -1,0 +1,16 @@
+Exercise: E-commerce Product Search Optimization
+Create a Java program for an e-commerce platform that allows searching for products using both linear search and binary search. The program should:
+Define a Product class with fields: productId, productName, and category.
+Take user input to enter a list of products.
+Search for a product by its productId using:
+Linear search on the original array.
+Binary search on a sorted array.
+Compare both methods based on efficiency and output the result.
+Algorithm	    Best Case	  Average Case	  Worst Case
+Linear Search	 O(1)	        O(n)	        O(n)
+Binary Search	 O(1)	        O(log n)	    O(log n)
+
+Feature	             Linear Search	          Binary Search
+Data requirement	   Unsorted	                Sorted by key
+Implementation	     Simple	                  Slightly more complex
+Scalability	         Poor with large data     Excellent for large data
