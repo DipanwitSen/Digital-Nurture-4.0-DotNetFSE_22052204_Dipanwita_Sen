@@ -11,6 +11,6 @@ Linear Search	   O(1)	        O(n)	        O(n)
 Binary Search	   O(1)	        O(log n)	    O(log n)
 
 Feature	               Linear Search	          Binary Search
-Data requirement	    Unsorted	                Sorted by key
+Data requirement	Unsorted	                Sorted by key
 Implementation	      Simple	                  Slightly more complex
-Scalability	          Poor with large data     Excellent for large data
+Scalability	            Poor with large data     Excellent for large data
