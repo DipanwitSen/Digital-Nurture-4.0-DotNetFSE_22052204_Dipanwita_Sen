@@ -29,6 +29,22 @@ oCreate concrete factory classes for each document type that extends DocumentFac
 5.Test the Factory Method Implementation:
 oCreate a test class to demonstrate the creation of different document types using the factory method.
 
+Exercise 3: Implementing the Builder Pattern
+Scenario: 
+You are developing a system to create complex objects such as a Computer with multiple optional parts. Use the Builder Pattern to manage the construction process.
+Steps:
+1.Create a New Java Project:
+oCreate a new Java project named BuilderPatternExample.
+2.Define a Product Class:
+oCreate a class Computer with attributes like CPU, RAM, Storage, etc.
+3.Implement the Builder Class:
+oCreate a static nested Builder class inside Computer with methods to set each attribute.
+oProvide a build() method in the Builder class that returns an instance of Computer.
+4.Implement the Builder Pattern:
+oEnsure that the Computer class has a private constructor that takes the Builder as a parameter.
+5.Test the Builder Implementation:
+oCreate a test class to demonstrate the creation of different configurations of Computer using the Builder pattern.
+
 The Singleton Pattern is a creational design pattern that ensures a class has only one instance and provides a global access point to it.
 It is commonly used for managing shared resources like configuration settings, database connections, or logging systems. 
 The constructor is made private to restrict instantiation from outside the class, and a static method (usually getInstance()) is used to return the single existing instance. 
@@ -41,5 +57,8 @@ This promotes loose coupling, makes the code more flexible and extensible, and h
 The Factory Method is widely used in frameworks, libraries, and applications that need to instantiate objects dynamically at runtime.
 It allows a system to be independent of the way its objects are created, composed, and represented. By encapsulating the creation process, it adheres to the principle of programming to an interface, not an implementation.
 
-
+The Builder Pattern is a creational design pattern used to construct complex objects step by step.
+It separates the construction process from the final representation, allowing the same construction logic to create different representations of an object.
+This pattern is particularly useful when an object requires multiple optional parameters or configurations. Instead of having numerous constructors (a telescoping constructor problem), the builder provides a clear and readable way to build an object by chaining method calls. 
+The pattern often involves a Builder class with methods to set individual properties and a final build() method that returns the fully constructed object. It enhances code readability, maintainability, and makes object creation more controlled and flexible.
 
