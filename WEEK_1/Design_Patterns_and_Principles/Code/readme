@@ -1,0 +1,45 @@
+Exercise 1: Implementing the Singleton Pattern
+Scenario: 
+You need to ensure that a logging utility class in your application has only one instance throughout the application lifecycle to ensure consistent logging.
+Steps:
+1.Create a New Java Project:
+oCreate a new Java project named SingletonPatternExample.
+2.Define a Singleton Class:
+oCreate a class named Logger that has a private static instance of itself.
+oEnsure the constructor of Logger is private.
+oProvide a public static method to get the instance of the Logger class.
+3.Implement the Singleton Pattern:
+oWrite code to ensure that the Logger class follows the Singleton design pattern.
+4.Test the Singleton Implementation:
+oCreate a test class to verify that only one instance of Logger is created and used across the application.
+
+Exercise 2: Implementing the Factory Method Pattern
+Scenario: 
+You are developing a document management system that needs to create different types of documents (e.g., Word, PDF, Excel). Use the Factory Method Pattern to achieve this.
+Steps:
+1.Create a New Java Project:
+oCreate a new Java project named FactoryMethodPatternExample.
+2.Define Document Classes:
+oCreate interfaces or abstract classes for different document types such as WordDocument, PdfDocument, and ExcelDocument.
+3.Create Concrete Document Classes:
+oImplement concrete classes for each document type that implements or extends the above interfaces or abstract classes.
+4.Implement the Factory Method:
+oCreate an abstract class DocumentFactory with a method createDocument().
+oCreate concrete factory classes for each document type that extends DocumentFactory and implements the createDocument() method.
+5.Test the Factory Method Implementation:
+oCreate a test class to demonstrate the creation of different document types using the factory method.
+
+The Singleton Pattern is a creational design pattern that ensures a class has only one instance and provides a global access point to it.
+It is commonly used for managing shared resources like configuration settings, database connections, or logging systems. 
+The constructor is made private to restrict instantiation from outside the class, and a static method (usually getInstance()) is used to return the single existing instance. 
+Singleton can be implemented in different ways, such as eager initialization, lazy initialization, or thread-safe versions, depending on the use case.
+This pattern helps in resource management and consistent access throughout the application. However, it should be used carefully to avoid issues with testing and concurrency.
+
+The Factory Method Pattern is a creational design pattern that provides an interface for creating objects but allows subclasses or implementing classes to alter the type of objects that will be created. 
+Instead of calling a constructor directly, you call a factory method that returns an instance of a class. 
+This promotes loose coupling, makes the code more flexible and extensible, and hides the object creation logic from the client. 
+The Factory Method is widely used in frameworks, libraries, and applications that need to instantiate objects dynamically at runtime.
+It allows a system to be independent of the way its objects are created, composed, and represented. By encapsulating the creation process, it adheres to the principle of programming to an interface, not an implementation.
+
+
+
