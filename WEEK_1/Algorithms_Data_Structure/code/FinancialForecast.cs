@@ -21,7 +21,8 @@ You are developing a financial forecasting tool that predicts future values base
    - Where:
      * P = principal or current value
      * r = rate of interest
-     * n = number of years (or compounding periods)
+     * year = number of years (or compounding periods)
+     * n=quarterly or half yearly 
 
 4. Complexity:
    - Recursion: Time O(2^n), Space O(n)
@@ -31,7 +32,7 @@ You are developing a financial forecasting tool that predicts future values base
 
 class FinancialForecast
 {
-    // Recursive approach without optimization: O(2^n)
+    // Recursive approach
     public static double Recursion(double currval, double rate, int years)
     {
         if (years == 0)
@@ -39,7 +40,7 @@ class FinancialForecast
         return Recursion(currval, rate, years - 1) * (1 + rate);
     }
 
-    // Memoization approach: stores already-computed results (Top-down DP)
+    // Memoization (Top-down DP)
     public static double Memoization(double currval, double rate, int years, Dictionary<int, double> memo)
     {
         if (years == 0)
@@ -51,7 +52,7 @@ class FinancialForecast
         return result;
     }
 
-    // Tabulation approach: builds solution iteratively from bottom-up
+    // Tabulation (Bottom-up DP)
     public static double Tabulation(double currval, double rate, int years)
     {
         double[] dp = new double[years + 1];
@@ -64,15 +65,15 @@ class FinancialForecast
     }
 
     // Simple Interest calculation
-    public static double SimpleInterest(double currval, double rate, int years)
+    public static double SimpleInterest(double currval, double rate, double years)
     {
         return currval + (currval * rate * years);
     }
 
-    // Converts nominal rate to effective annual rate
-    public static double EffectiveFromNominal(double nominal, int compPerYear)
+    // Convert Nominal % rate to Effective over total years (using compounding)
+    public static double EffectiveFromNominal(double nominalPercent, int compPerYear, double years)
     {
-        return Math.Pow(1 + nominal / compPerYear, compPerYear) - 1;
+        return Math.Pow(1 + (nominalPercent / (100 * compPerYear)), compPerYear * years) - 1;
     }
 
     static void Main()
@@ -80,29 +81,40 @@ class FinancialForecast
         Console.Write("Enter principal value: ");
         double initial = double.Parse(Console.ReadLine()!);
 
-        Console.Write("Enter number of years: ");
-        int years = int.Parse(Console.ReadLine()!);
+        Console.Write("Is the duration in (Y)ears or (M)onths? Enter Y or M: ");
+        string durationType = Console.ReadLine()!;
+        double years;
+
+        if (durationType.Equals("M", StringComparison.OrdinalIgnoreCase))
+        {
+            Console.Write("Enter number of months: ");
+            int months = int.Parse(Console.ReadLine()!);
+            years = months / 12.0;
+        }
+        else
+        {
+            Console.Write("Enter number of years: ");
+            years = double.Parse(Console.ReadLine()!);
+        }
 
         Console.Write("Do you have Nominal or Effective rate? (Enter N or E): ");
         string type = Console.ReadLine()!;
-
         double rate = 0.0;
 
-        // Determine rate based on user input
         if (type.Equals("N", StringComparison.OrdinalIgnoreCase))
         {
-            Console.Write("Enter Nominal annual rate (e.g., 0.06 for 6%): ");
+            Console.Write("Enter Nominal annual rate in % (e.g., 6 for 6%): ");
             double nominal = double.Parse(Console.ReadLine()!);
 
-            Console.Write("Enter compounding periods per year (e.g., 12): ");
+            Console.Write("Enter compounding periods per year (e.g., 4 for quarterly, 2 for half-yearly): ");
             int n = int.Parse(Console.ReadLine()!);
 
-            rate = EffectiveFromNominal(nominal, n);
-            Console.WriteLine($"Calculated Effective Annual Rate: {rate:F5}");
+            rate = EffectiveFromNominal(nominal, n, years);
+            Console.WriteLine($"Calculated Effective Rate over {years:F2} years: {rate:F5}");
         }
         else if (type.Equals("E", StringComparison.OrdinalIgnoreCase))
         {
-            Console.Write("Enter Effective annual rate (e.g., 0.0617): ");
+            Console.Write("Enter Effective rate for entire duration (e.g., 0.2610 for 26.1%): ");
             rate = double.Parse(Console.ReadLine()!);
         }
         else
@@ -111,20 +123,22 @@ class FinancialForecast
             return;
         }
 
-        // Future value using recursion
-        double resultRecursive = Recursion(initial, rate, years);
-        Console.WriteLine($"Future value (Recursion): {resultRecursive}");
+        Console.WriteLine();
 
-        // Future value using memoization
+        int intYears = (int)Math.Round(years);
+
+        double resultRecursive = Recursion(initial, rate, intYears);
+        Console.WriteLine($"Future value (Recursion): {resultRecursive:F2}");
+
         Dictionary<int, double> memo = new Dictionary<int, double>();
-        double resultMemo = Memoization(initial, rate, years, memo);
-        Console.WriteLine($"Future value (Memoization): {resultMemo}");
+        double resultMemo = Memoization(initial, rate, intYears, memo);
+        Console.WriteLine($"Future value (Memoization): {resultMemo:F2}");
 
-        // Future value using tabulation
-        double resultTabulation = Tabulation(initial, rate, years);
-        Console.WriteLine($"Future value (Tabulation): {resultTabulation}");
+        double resultTabulation = Tabulation(initial, rate, intYears);
+        Console.WriteLine($"Future value (Tabulation): {resultTabulation:F2}");
 
-        // Simple interest output
-        Console.WriteLine($"Simple Interest: {SimpleInterest(initial, rate, years)}");
+        Console.WriteLine($"Simple Interest: {SimpleInterest(initial, rate, years):F2}");
     }
 }
+
+       
