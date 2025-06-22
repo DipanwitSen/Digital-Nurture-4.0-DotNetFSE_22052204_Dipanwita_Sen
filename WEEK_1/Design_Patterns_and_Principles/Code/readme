@@ -45,6 +45,37 @@ oEnsure that the Computer class has a private constructor that takes the Builder
 5.Test the Builder Implementation:
 oCreate a test class to demonstrate the creation of different configurations of Computer using the Builder pattern.
 
+Exercise 4: Implementing the Adapter Pattern
+Scenario: 
+You are developing a payment processing system that needs to integrate with multiple third-party payment gateways with different interfaces. Use the Adapter Pattern to achieve this.
+Steps:
+1.Create a New Java Project:
+oCreate a new Java project named AdapterPatternExample.
+2.Define Target Interface:
+oCreate an interface PaymentProcessor with methods like processPayment().
+3.Implement Adaptee Classes:
+oCreate classes for different payment gateways with their own methods.
+4.Implement the Adapter Class:
+oCreate an adapter class for each payment gateway that implements PaymentProcessor and translates the calls to the gateway-specific methods.
+5.Test the Adapter Implementation:
+oCreate a test class to demonstrate the use of different payment gateways through the adapter.
+
+Exercise 5: Implementing the Decorator Pattern
+Scenario: 
+You are developing a notification system where notifications can be sent via multiple channels (e.g., Email, SMS). Use the Decorator Pattern to add functionalities dynamically.
+Steps:
+1.Create a New Java Project:
+oCreate a new Java project named DecoratorPatternExample.
+2.Define Component Interface:
+oCreate an interface Notifier with a method send().
+3.Implement Concrete Component:
+oCreate a class EmailNotifier that implements Notifier.
+4.Implement Decorator Classes:
+oCreate abstract decorator class NotifierDecorator that implements Notifier and holds a reference to a Notifier object.
+oCreate concrete decorator classes like SMSNotifierDecorator, SlackNotifierDecorator that extend NotifierDecorator.
+5.Test the Decorator Implementation:
+oCreate a test class to demonstrate sending notifications via multiple channels using decorators.
+
 The Singleton Pattern is a creational design pattern that ensures a class has only one instance and provides a global access point to it.
 It is commonly used for managing shared resources like configuration settings, database connections, or logging systems. 
 The constructor is made private to restrict instantiation from outside the class, and a static method (usually getInstance()) is used to return the single existing instance. 
