@@ -1,0 +1,49 @@
+
+(10 rows affected)
+
+(4 rows affected)
+
+(4 rows affected)
+
+(7 rows affected)
+P_ID  P_NAME          CATEGORY        PRICE     
+----- --------------- --------------- ----------
+    1 iPhone 14       Electronics       70000.00
+    2 Samsung S23     Electronics       68000.00
+    3 MacBook Air     Electronics      110000.00
+    4 Nike Shoes      Footwear           5000.00
+    5 Adidas Shoes    Footwear           4500.00
+    6 Dell XPS 13     Electronics       95000.00
+    7 Puma Shoes      Footwear           4000.00
+    8 Sony Headset    Electronics       15000.00
+    9 LG Monitor      Electronics       12000.00
+   10 Crocs           Footwear           3500.00
+
+(10 rows affected)
+Customer_ID Customer_Name        Region         
+----------- -------------------- ---------------
+    1       John Doe             North          
+    2       Jane Smith           South          
+    3       Alice Johnson        East           
+    4       Bob Brown            West           
+
+(4 rows affected)
+Order_ID Customer_ID Order_Date      
+-------- ----------- ----------------
+  101        1             2025-06-01
+  102        2             2025-06-02
+  103        3             2025-06-03
+  104        4             2025-06-04
+
+(4 rows affected)
+Order_Item_ID Order_ID Product_ID Quantity
+------------- -------- ---------- --------
+    1           101        1          1   
+    2           101        4          2   
+    3           102        3          1   
+    4           102        7          1   
+    5           103        5          2   
+    6           104        2          1   
+    7           104        6          1   
+
+(7 rows affected)
