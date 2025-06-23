@@ -2,3 +2,30 @@
 -- to run executive ranking spool file 
 -- get output in Ranking.txt
 --sqlcmd -S localhost normal server on first in sql Server configuration manage from sql server network connection enable tcp then start MSSQLSERVER from Server Services.
+
+ROW_NUMBER() is a window function that assigns a unique sequential number to each row in the result set. 
+The numbering always starts from 1 and increases by 1 for each row. It does not allow duplicates in the sequence.
+The order of numbering is controlled by the ORDER BY clause. It is commonly used for tasks like pagination and row indexing.
+
+RANK() is a window function that assigns a ranking number to each row, but it allows gaps in the sequence when there are ties.
+Rows with equal values receive the same rank, and the next rank is skipped accordingly. 
+For example, if two rows are tied at rank 1, the next row will have rank 3. It is useful for ranking items when duplicates should share the same position
+
+DENSE_RANK() is similar to RANK(), but it does not skip ranks when there are ties.
+Rows with the same values get the same rank, and the next rank continues without gaps.
+For example, if two rows are tied at rank 1, the next row will have rank 2.
+It is useful when you want a continuous ranking even when duplicates exist.
+
+ORDER BY is a clause used in both regular queries and window functions to sort the result set based on one or more columns. 
+In window functions, it controls how rows are ranked or numbered.
+The sort order can be ascending (ASC) or descending (DESC), and it directly affects the sequence of row numbers, ranks, or other calculations.
+
+PARTITION BY is a keyword used in window functions to divide the result set into groups (partitions) and restart the numbering or ranking within each group.
+Without PARTITION BY, the entire table is treated as a single partition.
+It is useful when you want to apply row numbering or ranking separately for each category, department, or any other subgroup.
+
+
+
+
+
+
