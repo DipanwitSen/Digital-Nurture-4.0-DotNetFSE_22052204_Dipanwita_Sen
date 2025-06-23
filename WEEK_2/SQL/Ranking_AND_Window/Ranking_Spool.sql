@@ -149,6 +149,16 @@ SELECT
 FROM Order_Items;
 GO
 
+-- =========================================
+-- Insert Additional Rows into Products Table
+-- =========================================
+INSERT INTO Products VALUES
+(11, 'iPhone 14 Pro', 'Electronics', 70000.00), -- Same price as iPhone 14
+(12, 'Samsung S23 Ultra', 'Electronics', 68000.00), -- Same price as Samsung S23
+(13, 'Nike Air Max', 'Footwear', 5000.00), -- Same price as Nike Shoes
+(14, 'Adidas UltraBoost', 'Footwear', 4500.00); -- Same price as Adidas Shoes
+GO
+        
 -- Stop spooling
 :OUT
 -- Here everything output in Ranking.txt
