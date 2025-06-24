@@ -1,0 +1,34 @@
+ProductID   ProductName                                                                                          Category                                           Price       
+----------- ---------------------------------------------------------------------------------------------------- -------------------------------------------------- ------------
+          1 Laptop                                                                                               Electronics                                             1200.00
+
+(1 rows affected)
+ProductID   ProductName                                                                                          Category                                           Price       
+----------- ---------------------------------------------------------------------------------------------------- -------------------------------------------------- ------------
+          1 Laptop                                                                                               Electronics                                             1200.00
+
+(1 rows affected)
+OrderID     CustomerID  OrderDate       
+----------- ----------- ----------------
+          1           1       2023-01-15
+
+(1 rows affected)
+Msg 1902, Level 16, State 3, Server cc, Line 2
+Cannot create more than one clustered index on table 'Orders'. Drop the existing clustered index 'PK__Orders__C3905BAF3CE3C754' before creating another.
+OrderID     CustomerID  OrderDate       
+----------- ----------- ----------------
+          1           1       2023-01-15
+
+(1 rows affected)
+OrderID     CustomerID  OrderDate       
+----------- ----------- ----------------
+          1           1       2023-01-15
+
+(1 rows affected)
+OrderID     CustomerID  OrderDate       
+----------- ----------- ----------------
+          1           1       2023-01-15
+
+(1 rows affected)
+Sqlcmd: Error: Syntax error at line 191 near command '
+'.
