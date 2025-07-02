@@ -27,5 +27,65 @@ Expand:
 (localdb)\MSSQLLocalDB → Databases → RetailStore → Tables
 Tables Products and Categories should be visible.
 
+ORM (Object-Relational Mapping):
+Maps C# classes (objects) to relational database tables, making database operations simpler and abstracting SQL queries.
+Entity Framework Core (EF Core):
+A lightweight, cross-platform ORM for .NET that supports LINQ, asynchronous operations, migrations, and modern database features.
+Entity Framework Core vs Entity Framework (EF6):
+EF Core is faster, modern, and cross-platform. EF6 is older, Windows-only, and less flexible.
+EF Core 8.0 Features:
+Supports JSON column mapping, improved performance with compiled models, interceptors, and better bulk operations.
+Models:
+C# classes like Category and Product that define the structure of database tables.
+Properties:
+Attributes inside models that map to columns in the database, such as Id, Name, and Price.
+DbContext:
+The class (AppDbContext) that represents a session with the database and tracks entity changes.
+DbSet:
+Represents a table in the database. Example: DbSet<Product> maps to the Products table.
+Connection String:
+Defines how to connect to the database. Example:
+"Server=(localdb)\\MSSQLLocalDB;Database=RetailStore;Trusted_Connection=True;"
+SQL Server LocalDB:
+A lightweight, local SQL Server instance used for development.
+EF Core CLI:
+Command Line Interface tool for managing migrations and database updates.
+Migration:
+A way to version and apply schema changes. Created using:
+dotnet ef migrations add InitialCreate --project RetailInventory
+Database Update:
+Applies migrations to the database to create or modify tables. Command:
+dotnet ef database update --project RetailInventory
+AddRangeAsync:
+Adds multiple records (products or categories) to the database in a single operation.
+SaveChangesAsync:
+Commits pending changes to the database.
+LINQ (Language Integrated Query):
+Query syntax used to filter, retrieve, and manipulate data from the database.
+ToListAsync():
+Retrieves all records from a table asynchronously.
+FindAsync():
+Finds a record by primary key (ID).
+FirstOrDefaultAsync():
+Retrieves the first matching record based on a condition.
+Where():
+Filters records based on a specified condition.
+OrderByDescending():
+Sorts records in descending order.
+Select():
+Projects (transforms) records into new shapes or anonymous objects.
+Data Transfer Object (DTO):
+Simplified objects used to pass specific data, useful for API responses.
+Async and Await:
+Keywords used for asynchronous programming to prevent blocking the main thread during database operations.
+Update Operations:
+Modify existing records by changing property values and saving changes.
+Delete Operations:
+Remove records using Remove() and SaveChangesAsync().
+EF Core Change Tracking:
+EF Core automatically tracks added, modified, or deleted entities through the DbContext.
+
+
+
 
 
