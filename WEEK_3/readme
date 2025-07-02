@@ -1,0 +1,31 @@
+LAB2
+In Lab 2, we are configuring the core connection between our C# application and the SQL Server database using Entity Framework Core (EF Core).
+We define the models for Category and Product to represent the data structure in the database. 
+We also create a special class called AppDbContext, which acts as a bridge between our application and the database.
+This context tells EF Core which tables to create (Products and Categories) and how to connect to the database using a connection string. 
+By setting up this DbContext, we are enabling our application to automatically map C# objects to SQL Server tables, without writing SQL queries manually.
+
+Create the Project:dotnet new console -n RetailInventory
+Move into Project Folder:cd RetailInventory
+Install EF Core SQL Server Package:dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+Install EF Core Design Package:dotnet add package Microsoft.EntityFrameworkCore.Design
+Install EF Core CLI Tool:dotnet tool install --global dotnet-ef
+
+LAB3
+In Lab 3, we are learning to use the EF Core Command Line Interface (CLI) to manage the structure of the database.
+A migration in EF Core is a way to track changes in the database schema over time. We use the CLI to create a migration based on the C# models we defined in Lab 2.
+This migration generates SQL scripts automatically for creating the tables. 
+After creating the migration, we apply it to the database using the dotnet ef database update command.
+This step actually creates the physical tables in the database.
+EF Core’s migration system helps us keep the database structure in sync with our C# models as the project grows.
+
+Create Migration:dotnet ef migrations add InitialCreate --project RetailInventory
+Apply Migration to Create Database:dotnet ef database update --project RetailInventory
+Verify Database:
+Open SQL Server Object Explorer
+Expand:
+(localdb)\MSSQLLocalDB → Databases → RetailStore → Tables
+Tables Products and Categories should be visible.
+
+
+
