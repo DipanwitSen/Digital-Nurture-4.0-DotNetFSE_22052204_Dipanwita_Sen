@@ -37,6 +37,7 @@ Kafka is widely used for:
 ---
 
 🔧 Kafka & Zookeeper Setup (Windows)
+
 ✅ 1. Start Zookeeper
 Open Command Prompt 1 and run:
 cd C:\kafka\bin\windows
