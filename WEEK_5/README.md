@@ -36,15 +36,22 @@ Kafka is widely used for:
 
 ---
 
-## 🔧 Kafka & Zookeeper Setup (Windows)
-- 1 Zookeeeper
-- cd C:\kafka\bin\windows
+🔧 Kafka & Zookeeper Setup (Windows)
+✅ 1. Start Zookeeper
+Open Command Prompt 1 and run:
+cd C:\kafka\bin\windows
 zookeeper-server-start.bat ..\..\config\zookeeper.properties
--2 Kafta
--cd C:\kafka\bin\windows
+This starts the Zookeeper service which is required by Kafka for coordination.
+
+✅ 2. Start Kafka Server
+Open Command Prompt 2 and run:
+cd C:\kafka\bin\windows
 kafka-server-start.bat ..\..\config\server.properties
--3 Create Kafta Topic
--cd C:\kafka\bin\windows
+This starts the Kafka broker on localhost:9092.
+
+✅ 3. Create Kafka Topic (Only once)
+Open Command Prompt 3 and run:
+cd C:\kafka\bin\windows
 kafka-topics.bat --create --topic chat-topic --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
 ### 1. ✅ Download Kafka
