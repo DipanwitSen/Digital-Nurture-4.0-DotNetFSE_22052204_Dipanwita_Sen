@@ -219,3 +219,127 @@ myfirstreact/
 │   └── App.js
 ├── package.json
 └── README.md
+
+# 📘 React Components - Lab Guide
+
+This document explains the core concepts related to **React components** including their types, differences from JavaScript functions, constructors, and the `render()` method.
+
+---
+
+## 🔹 What Are React Components?
+
+**React components** are the building blocks of a React application.  
+They describe how a portion of the UI should appear and behave.
+
+> 💡 Each component is a JavaScript function or class that returns JSX (HTML-like syntax).
+
+---
+
+## ⚖️ Components vs JavaScript Functions
+
+| Feature                         | React Component                         | JavaScript Function                      |
+|-------------------------------|-----------------------------------------|------------------------------------------|
+| Returns JSX                   | ✅ Yes                                  | ❌ No (unless manually handled)           |
+| Used in UI rendering          | ✅ Yes                                  | ❌ Typically not                          |
+| React lifecycle methods       | ✅ Yes (in class components)            | ❌ No                                     |
+| React hooks support           | ✅ Yes (in function components)         | ❌ No                                     |
+| Must start with uppercase     | ✅ Yes (`MyComponent`)                  | ❌ No such rule                           |
+
+---
+
+## 🧩 Types of Components
+
+React supports two main types of components:
+
+### 1. **Function Component**
+- Uses a plain JavaScript function
+- Can use **React Hooks** (like `useState`, `useEffect`)
+- Preferred for most modern React apps
+
+### 2. **Class Component**
+- Uses a JavaScript `class`
+- Supports **lifecycle methods** and `state`
+- Used before React Hooks were introduced
+
+---
+
+## 🧠 Function Component Example
+
+```jsx
+import React from 'react';
+
+function Welcome() {
+  return <h2>Hello from Function Component!</h2>;
+}
+
+export default Welcome;
+✅ No constructor or render() needed
+✅ Simple and concise
+
+🧠 Class Component Example
+jsx
+import React, { Component } from 'react';
+
+class Welcome extends Component {
+  render() {
+    return <h2>Hello from Class Component!</h2>;
+  }
+}
+
+export default Welcome;
+✅ Has render()
+✅ Can include constructor, lifecycle methods, and state
+
+🧱 What is a Component Constructor?
+In class components, the constructor is a special method used to:
+
+Initialize component state
+
+Bind event handler methods
+
+Example:
+
+constructor(props) {
+  super(props);
+  this.state = {
+    name: 'React Learner'
+  };
+}
+🔸 You must call super(props) before using this
+
+🖼️ What is the render() Function?
+Every class component must have a render() method
+
+It returns JSX that will be rendered on the screen
+
+Example:
+render() {
+  return (
+    <div>
+      <h1>Welcome, {this.state.name}</h1>
+    </div>
+  );
+}
+🔁 Called every time the component updates
+
+🧪 Summary
+Concept	Function Component	Class Component
+Uses function	✅ Yes	❌ No
+Uses class	❌ No	✅ Yes
+Can have state	✅ (with Hooks)	✅
+Uses render()	❌ No	✅ Yes
+Constructor used?	❌ No	✅ Yes (optional)
+
+📦 Sample Usage in App.js
+import React from 'react';
+import Welcome from './Welcome';
+
+function App() {
+  return (
+    <div>
+      <Welcome />
+    </div>
+  );
+}
+
+export default App;
