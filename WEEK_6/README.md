@@ -129,17 +129,32 @@ myfirstreact/
 │   └── App.js
 ├── package.json
 └── README.md
+
 ⚛️ 7. React Components - Explained
 🔹 What is a Component?
 A React component is a reusable block of UI represented as a function or class.
+## ⚖️ Components vs JavaScript Functions
 
-⚖️ Components vs JavaScript Functions
-Feature	React Component	JS Function
-Returns JSX	✅ Yes	❌ No
-Used in UI rendering	✅ Yes	❌ No
-React lifecycle support	✅ (Class only)	❌
-React Hooks support	✅ (Function only)	❌
-Must start with uppercase	✅ Yes (e.g., MyComponent)	❌ No
+| Feature                   | React Component                       | JavaScript Function         |
+|---------------------------|----------------------------------------|------------------------------|
+| Returns JSX               | ✅ Yes                                 | ❌ No                         |
+| Used in UI Rendering      | ✅ Yes                                 | ❌ No                         |
+| React Lifecycle Support   | ✅ Yes (Class Only)                    | ❌ No                         |
+| React Hooks Support       | ✅ Yes (Function Only)                 | ❌ No                         |
+| Must Start with Uppercase| ✅ Yes (e.g., `MyComponent`)           | ❌ No                         |
+
+---
+
+## 🔁 Summary: Function vs Class Component
+
+| Concept              | Function Component       | Class Component         |
+|----------------------|---------------------------|--------------------------|
+| Syntax               | `function`                | `class`                  |
+| JSX Return           | ✅ Yes                    | ✅ Yes                   |
+| State Support        | ✅ Yes (with Hooks)       | ✅ Native                |
+| Lifecycle Support    | ✅ Yes (with Hooks)       | ✅ Native                |
+| `render()` Required? | ❌ No                     | ✅ Yes                   |
+| `constructor()` Used?| ❌ No                     | ✅ Optional              |
 
 🧩 8. Types of Components
 1️⃣ Function Component
@@ -199,14 +214,6 @@ render() {
     </div>
   );
 }
-🔁 Summary: Function vs Class Component
-Concept	Function Component	Class Component
-Syntax	function	class
-JSX Return	✅ Yes	✅ Yes
-State Support	✅ (with Hooks)	✅ Native
-Lifecycle Support	✅ (with Hooks)	✅ Native
-render() Required?	❌ No	✅ Yes
-constructor() Used?	❌ No	✅ Optional
 
 💡 9. Usage Example in App.js
 jsx
