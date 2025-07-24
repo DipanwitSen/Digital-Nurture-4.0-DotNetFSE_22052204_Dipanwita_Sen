@@ -189,31 +189,18 @@ Node.js and npm installed (https://nodejs.org/)
 Visual Studio Code installed (https://code.visualstudio.com/)
 
 ⚙️ 2. Create React App
-bash
-Copy
-Edit
 npx create-react-app myfirstreact
 Respond with y if prompted to install packages.
 
 💻 3. Open Project in Visual Studio Code
-bash
-Copy
-Edit
 cd myfirstreact
 code .
 🚀 4. Start Development Server
-bash
-Copy
-Edit
 npm start
 Browser will open at: http://localhost:3000
 
 🧠 5. Modify App.js to Show Custom Message
 Edit the file: src/App.js
-
-jsx
-Copy
-Edit
 import React from 'react';
 
 function App() {
@@ -268,10 +255,6 @@ A React component is a reusable block of UI represented as a function or class.
 Defined using a simple function.
 
 Can use React Hooks like useState, useEffect.
-
-jsx
-Copy
-Edit
 function Welcome() {
   return <h2>Hello from Function Component!</h2>;
 }
@@ -281,10 +264,6 @@ function Welcome() {
 Defined using ES6 class syntax.
 
 Can use state and lifecycle methods.
-
-jsx
-Copy
-Edit
 import React, { Component } from 'react';
 
 class Welcome extends Component {
@@ -296,10 +275,6 @@ class Welcome extends Component {
 
 ⚙️ Constructor in Class Component
 Used to initialize state or bind methods.
-
-jsx
-Copy
-Edit
 constructor(props) {
   super(props);
   this.state = {
@@ -310,10 +285,6 @@ constructor(props) {
 
 🖼️ render() Function
 All class components must have a render() function that returns JSX.
-
-jsx
-Copy
-Edit
 render() {
   return (
     <div>
@@ -323,9 +294,6 @@ render() {
 }
 
 💡 9. Usage Example in App.js
-jsx
-Copy
-Edit
 import React from 'react';
 import Welcome from './Welcome';
 
@@ -340,10 +308,6 @@ function App() {
 export default App;
 🧪 10. Fixing Vulnerabilities (Optional)
 If npm shows warnings or vulnerabilities:
-
-bash
-Copy
-Edit
 npm audit fix --force
 It may introduce breaking changes, so use with caution during learning phase.
 
@@ -353,9 +317,7 @@ React 18+
 Node.js
 
 npm
-
 Visual Studio Code
-
 ✅ Final Output
 URL: http://localhost:3000
 Message: Welcome to the first session of React
