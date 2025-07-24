@@ -101,6 +101,64 @@ These hooks give developers **fine-grained control** over what happens and when 
 | **Error Handling** | `componentDidCatch()`    | Catch JavaScript errors in children |
 
 ---
+# 📘 React Router: Concepts & Usage
+
+## ✅ Why Do We Need React Router?
+
+React is a Single Page Application (SPA) library, meaning it loads a single HTML page and dynamically updates content without refreshing the page. However, SPAs still need navigation between views (e.g., Home → About → Profile).
+
+### 🔧 Problems without React Router:
+- Reloading the whole app manually
+- Difficult manual state and URL management
+- Lack of deep linking (copy-pasteable URLs)
+
+### 🌟 Benefits of React Router:
+- Enables **multi-view navigation** in SPAs
+- Preserves **application state** between navigations
+- Uses **URL history API** for clean navigation
+- Allows **deep linking** to specific content
+- Supports **dynamic routing** (e.g., `/users/:id`)
+
+---
+
+## 🧩 React Router Components
+
+| Component | Purpose |
+|----------|---------|
+| `<BrowserRouter>` | Wraps your application to enable routing using the browser’s History API |
+| `<Routes>`        | Replaces older `<Switch>`; renders the first matching child `<Route>` |
+| `<Route>`         | Defines a path and the component to render |
+| `<Link>`          | Navigates to another route without reloading the page |
+| `<NavLink>`       | Like `<Link>`, but adds styling when link is active |
+| `<useParams>`     | A hook to access URL parameters |
+| `<useNavigate>`   | A hook to programmatically navigate |
+
+---
+
+## 🛣️ Types of Routers in React Router
+
+1. **BrowserRouter**  
+   - Uses the HTML5 History API  
+   - Clean URLs (no `#`)  
+   - Most commonly used  
+
+2. **HashRouter**  
+   - Uses the hash portion of the URL (`/#/about`)  
+   - Useful when server doesn't support history API  
+
+3. **MemoryRouter**  
+   - Keeps navigation history in memory (not reflected in the URL)  
+   - Useful for testing or non-browser environments  
+
+---
+
+## 🔗 Parameter Passing via URL
+
+You can pass dynamic data in the URL using route parameters.
+
+### ✅ Define Route with Params
+```jsx
+<Route path="/user/:userId" element={<UserDetails />} />
 
 ## 🔁 Sequence of Steps in Rendering a Class Component
 
