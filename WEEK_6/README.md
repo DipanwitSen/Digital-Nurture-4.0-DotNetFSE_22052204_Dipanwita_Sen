@@ -65,6 +65,55 @@ This is a basic React app built using `create-react-app`.
 
 ---
 
+## ✅ Why Component Lifecycle is Needed
+
+React components go through a lifecycle from creation to destruction. The **lifecycle methods** provide hooks that allow developers to:
+
+- Fetch data from APIs
+- Set up subscriptions or timers
+- Perform cleanup before components are removed
+- Handle errors gracefully
+- Optimize performance and rendering
+
+These hooks give developers **fine-grained control** over what happens and when in the life of a component.
+
+---
+
+## 🌟 Benefits of Using Lifecycle Methods
+
+- 📦 **Data Initialization**: Fetch or prepare data before rendering (`componentDidMount`)
+- 🔄 **Update Control**: Respond to props or state changes (`componentDidUpdate`)
+- 🧹 **Cleanup**: Avoid memory leaks by cleaning up timers, listeners (`componentWillUnmount`)
+- ⚠️ **Error Handling**: Catch and display component errors gracefully (`componentDidCatch`)
+- 🎯 **Performance Tuning**: Prevent unnecessary rendering (`shouldComponentUpdate`)
+
+---
+
+## 🧩 Common Lifecycle Hook Methods (Class Components)
+
+| Phase              | Method                   | Description |
+|--------------------|--------------------------|-------------|
+| **Mounting**       | `constructor()`          | Initialize state and bind methods |
+|                    | `componentDidMount()`    | Called after component is inserted into the DOM |
+| **Updating**       | `shouldComponentUpdate()`| Determines if re-rendering is necessary |
+|                    | `componentDidUpdate()`   | Runs after component updates in the DOM |
+| **Unmounting**     | `componentWillUnmount()` | Cleanup before component is removed |
+| **Error Handling** | `componentDidCatch()`    | Catch JavaScript errors in children |
+
+---
+
+## 🔁 Sequence of Steps in Rendering a Class Component
+
+```text
+1. constructor()
+2. render()
+3. componentDidMount()
+(when state/props change)
+4. shouldComponentUpdate()
+5. render()
+6. componentDidUpdate()
+(when component is removed)
+7. componentWillUnmount()
 ## 💻 Steps to Run
 
 ### 1. Install Node.js & npm
