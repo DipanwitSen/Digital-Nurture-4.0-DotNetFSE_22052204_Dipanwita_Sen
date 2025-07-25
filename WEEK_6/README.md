@@ -161,32 +161,29 @@ Welcome.defaultProps = {
   name: "Guest"
 };
 
-// Output: Hello, Guest
-<Welcome />
-❓ Q3: What is the difference between State and Props in React?
-🅰️ Answer:
+##❓ Q3: What is the difference between State and Props in React?
+**🅰️ Answer:**
 
-Props and State are both used to control the behavior and appearance of React components, but they serve different purposes.
+## 🔁 Difference Between Props and State in React
 
-🔹 Differences:
-Feature	Props	State
-Definition	Passed from parent component	Managed within the component
-Mutability	Immutable (read-only)	Mutable (can be updated)
-Purpose	Configure child components	Track changes/data over time
-Access	props.propertyName	this.state (class) or useState()
-Who Controls	Parent component	Component itself
+| Feature            | Props                             | State                                 |
+|--------------------|------------------------------------|----------------------------------------|
+| **Definition**     | Passed from parent component       | Managed within the component           |
+| **Mutability**     | Immutable (read-only)              | Mutable (can be changed)               |
+| **Purpose**        | Configure components with external data | Track internal, dynamic data     |
+| **Access**         | `props.propertyName`               | `this.state` (class) / `useState()` (function) |
+| **Who Controls It**| Parent component                   | Component itself                       |
+| **Modifiable By**  | Cannot be modified by the component| Can be updated using `setState()` or `useState()` |
+| **Usage Scenario** | Used for passing data between components | Used for handling UI behavior and data changes |
 
-❓ Q4: What is ReactDOM.render()?
-🅰️ Answer:
+##❓ Q4: What is ReactDOM.render()?
+**🅰️ Answer:**
 
 ReactDOM.render() is a method used to render React elements or components into the actual DOM (Document Object Model).
 
 It serves as the entry point of a React application to mount the root component to a DOM node.
 
 🔹 Syntax:
-jsx
-Copy
-Edit
 ReactDOM.render(<App />, document.getElementById('root'));
 🔹 Explanation:
 <App /> is the component being rendered.
