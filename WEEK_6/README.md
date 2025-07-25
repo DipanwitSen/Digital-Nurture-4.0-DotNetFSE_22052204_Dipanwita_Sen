@@ -134,6 +134,66 @@ React is a Single Page Application (SPA) library, meaning it loads a single HTML
 | `<useNavigate>`   | A hook to programmatically navigate |
 
 ---
+# React Q&A: Props, State, and ReactDOM
+
+## ❓ Q1: What are Props in React?
+
+**🅰️ Answer:**
+
+Props (short for "properties") are read-only attributes used to pass data from a parent component to a child component in React. They allow components to be dynamic and reusable.
+
+### 🔹 Example:
+```jsx
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+<Welcome name="Elisa" />
+
+## ❓ Q2: What are Default Props in React??
+**🅰️ Answer:**
+
+Default Props are values a React component uses if no specific props are provided by the parent component. They act as fallback values to prevent undefined errors.
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+Welcome.defaultProps = {
+  name: "Guest"
+};
+
+// Output: Hello, Guest
+<Welcome />
+❓ Q3: What is the difference between State and Props in React?
+🅰️ Answer:
+
+Props and State are both used to control the behavior and appearance of React components, but they serve different purposes.
+
+🔹 Differences:
+Feature	Props	State
+Definition	Passed from parent component	Managed within the component
+Mutability	Immutable (read-only)	Mutable (can be updated)
+Purpose	Configure child components	Track changes/data over time
+Access	props.propertyName	this.state (class) or useState()
+Who Controls	Parent component	Component itself
+
+❓ Q4: What is ReactDOM.render()?
+🅰️ Answer:
+
+ReactDOM.render() is a method used to render React elements or components into the actual DOM (Document Object Model).
+
+It serves as the entry point of a React application to mount the root component to a DOM node.
+
+🔹 Syntax:
+jsx
+Copy
+Edit
+ReactDOM.render(<App />, document.getElementById('root'));
+🔹 Explanation:
+<App /> is the component being rendered.
+
+document.getElementById('root') points to the HTML element where the component is injected.
+
+It is typically used in index.js of a React app.
 
 ## 🛣️ Types of Routers in React Router
 
