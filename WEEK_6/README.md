@@ -51,6 +51,44 @@ The **Virtual DOM (VDOM)** is a lightweight copy of the real DOM stored in memor
 3. Only the changed parts are updated in the real DOM (reconciliation).
 
 ---
+# 📘 Understanding React State
+
+## 🧠 What is React State?
+
+React **state** is a built-in object that allows components to create and manage their own data. State represents **dynamic information** that can change over time—like user input, responses from APIs, or UI events—and allows React to re-render the component whenever that data changes.
+
+---
+
+## 🧩 Why Use State?
+
+Without state, components would be static. With state, you can:
+- Track user interactions (e.g., input fields, button clicks)
+- Manage API data (e.g., fetched results)
+- Control conditional rendering (e.g., modals, toggles)
+
+---
+
+## 🛠️ How to Use State
+
+React provides the `useState()` hook in functional components.
+
+### Basic Syntax
+
+```jsx
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times.</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
 
 ## 🚧 Project: My First React App
 
