@@ -89,8 +89,46 @@ function Counter() {
     </div>
   );
 }
+Explanation
+count is the state variable.
 
+setCount is the function to update the state.
+
+useState(0) initializes count to 0.
+
+### 🧾 Rules of State
+✅ You can use multiple useState() hooks.
+
+❌ Never update state directly (e.g., count = count + 1 is invalid).
+
+✅ State updates are asynchronous—they do not happen instantly.
+
+✅ Changing state triggers a re-render.
+
+###⚠️ Common Pitfalls
+State doesn't update immediately: React batches updates for performance.
+
+Overusing state: Not all data needs to be in state. Only dynamic or user-driven data should be.
+
+State scope: State in one component isn’t accessible in another unless passed via props or managed globally.
+
+###🌐 When to Use State vs Props?
+Feature	state	props
+Mutability	Mutable (can change)	Immutable (read-only)
+Ownership	Controlled by the component	Passed from parent component
+Purpose	Internal data & interactivity	External configuration/data
 ## 🚧 Project: My First React App
+## 🧩 Difference Between `state` and `props` in React
+
+| Aspect              | `state`                                      | `props`                                      |
+|---------------------|-----------------------------------------------|----------------------------------------------|
+| **Mutability**       | Mutable – can be changed using `setState` or `useState()` | Immutable – cannot be changed by the component receiving them |
+| **Ownership**        | Managed within the component                 | Passed from parent to child component        |
+| **Purpose**          | For internal data and UI logic               | For configuration and communication between components |
+| **Usage**            | Declared with `useState()` (functional) or in `this.state` (class) | Passed via attributes when using the component |
+| **Updatability**     | Can be updated based on user interaction or app logic | Cannot be modified by the receiving component |
+| **Component Type**   | Used in both functional and class components | Used in all component types                  |
+| **Triggers Re-render?** | Yes, when changed via `setState` or `useState` | Yes, when parent re-renders with new values  |
 
 This is a basic React app built using `create-react-app`.
 
