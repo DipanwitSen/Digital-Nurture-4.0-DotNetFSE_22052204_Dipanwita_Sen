@@ -28,7 +28,7 @@ This document outlines key features introduced in ECMAScript 2015 (ES6) and prov
 **Example:**
 ```js
 let count = 10;
-count = 20; // valid
+count = 20; 
 let count = 30; // SyntaxError: Identifier 'count' has already been declared
 ## Difference Between var and let
 
@@ -39,7 +39,7 @@ let count = 30; // SyntaxError: Identifier 'count' has already been declared
 | Hoisting       | Yes, initialized as undefined      | Yes, but not initialized         |
 | Global Object  | Adds to global window object       | Does not add to global object    |
 
-## JavaScript const
+ JavaScript const
 
 - const declares a block-scoped constant variable.
 - Must be initialized at the time of declaration.
