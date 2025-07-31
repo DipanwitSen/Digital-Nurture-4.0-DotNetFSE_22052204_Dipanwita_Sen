@@ -18,9 +18,45 @@ This document outlines key features introduced in ECMAScript 2015 (ES6) and prov
 - **`Map` and `Set` Data Structures**
 
 ---
-# 📘 React Events & Event Handling (Theory Only)
+# React: Conditional Rendering, Element Variables, and Preventing Component Rendering
 
-## ✅ 1. React Events
+##  Conditional Rendering in React
+
+Conditional rendering in React refers to the process of displaying UI elements or components based on certain conditions. This is similar to how conditions work in JavaScript, using `if`, `else`, `ternary operators`, or logical `&&` operators to decide what to render.
+
+For example:
+- Show a login form if the user is not authenticated.
+- Show a welcome message if the user is logged in.
+
+React uses regular JavaScript syntax to handle these conditions, allowing for flexibility and control over what appears on the screen.
+
+### Common Techniques:
+- **Ternary Operator**: `condition ? <ComponentA /> : <ComponentB />`
+- **Logical AND (`&&`)**: `condition && <Component />`
+- **If-Else Statements** (inside functions, not directly in JSX)
+
+---
+
+##  Element Variables
+
+Element variables in React are used to store JSX elements in variables, which can then be conditionally rendered.
+
+Instead of using `if...else` or `ternary` directly inside JSX, you can declare a variable and assign it a JSX element based on conditions.
+
+### Example:
+
+```jsx
+let button;
+if (isLoggedIn) {
+  button = <LogoutButton />;
+} else {
+  button = <LoginButton />;
+}
+return <div>{button}</div>;
+
+#  React Events & Event Handling (Theory Only)
+
+##  1. React Events
 
 React Events are how React handles user interactions in a web application. These include actions such as mouse clicks, typing in input fields, form submissions, key presses, and more. React provides its own event system that is very similar to the DOM event system but has some key advantages, such as better cross-browser compatibility and performance optimizations.
 
@@ -28,7 +64,7 @@ React events are passed as **SyntheticEvent** objects and are attached using **c
 
 ---
 
-## ✅ 2. Event Handlers
+## 2. Event Handlers
 
 Event Handlers are JavaScript functions that are triggered when a particular event occurs in the React component. They define what should happen in response to user interactions.
 
@@ -40,7 +76,7 @@ In React:
 
 ---
 
-## ✅ 3. Synthetic Events
+##  3. Synthetic Events
 
 Synthetic Events are React’s cross-browser wrapper around the browser’s native events. They provide a consistent and normalized interface for handling events across different browsers.
 
@@ -50,7 +86,7 @@ Synthetic events pool objects for performance reasons, so event properties might
 
 ---
 
-## ✅ 4. React Event Naming Convention
+##  4. React Event Naming Convention
 
 React follows specific naming conventions for handling events:
 
