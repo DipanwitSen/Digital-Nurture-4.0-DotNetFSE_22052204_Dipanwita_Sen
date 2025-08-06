@@ -1,6 +1,6 @@
-# 📄 Understanding `.gitignore` in Git
+#  Understanding `.gitignore` in Git
 
-## 🔍 What is `.gitignore`?
+##  What is `.gitignore`?
 The `.gitignore` file tells Git which files (or file patterns) it should **ignore** and **not track** in version control.
 This is useful when you have:
 - Temporary files (e.g., `*.log`, `*.tmp`)
