@@ -10,10 +10,10 @@ This is useful when you have:
 
 Git will **skip staging or committing** any file or folder that matches a pattern listed in `.gitignore`.
 
-Benefits of .gitignore
-Keeps your repository clean.
-Prevents committing unnecessary files.
-Protects sensitive or environment-specific data.
+## Benefits of .gitignore
+- Keeps your repository clean.
+- Prevents committing unnecessary files.
+- Protects sensitive or environment-specific data.
 ---
 
 ## 🛠️ How to Use `.gitignore` to Ignore Unwanted Files
