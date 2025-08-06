@@ -14,6 +14,44 @@ Git will **skip staging or committing** any file or folder that matches a patter
 - Keeps your repository clean.
 - Prevents committing unnecessary files.
 - Protects sensitive or environment-specific data.
+  
+## Steps Performed
+1. Navigate to Project Directory
+```cmd
+cd C:\Users\KIIT\GitDemo
+
+2. Create .gitignore File
+echo *.log >> .gitignore
+echo build/ >> .gitignore
+echo node_modules/ >> .gitignore
+echo .env >> .gitignore
+
+This tells Git to ignore:
+All .log files (e.g., debug.log)
+build/ directory and its contents
+node_modules/ directory
+.env file containing environment variables
+
+3. Verified .gitignore Contents
+notepad .gitignore
+
+4. Created Unwanted Files for Testing
+echo "Log file" > debug.log
+mkdir build
+echo "test" > build/output.txt
+These files matched .gitignore patterns and were therefore not tracked by Git.
+
+5. Checked Git Status
+git status
+
+6. Staged and Committed .gitignore
+git add .gitignore
+git commit -m "Add .gitignore to ignore logs, build files, and environment variables"
+
+Git responded:
+[master c7ab98d] Add .gitignore to ignore logs, build files, and environment variables
+ 1 file changed, 5 insertions(+)
+ create mode 100644 .gitignore
 ---
 
 ## 🛠️ How to Use `.gitignore` to Ignore Unwanted Files
@@ -47,3 +85,12 @@ git commit -m "Add .gitignore to exclude unwanted files"
 If you already committed a file and then added it to .gitignore, it will still be tracked by Git.
 To stop tracking it:
 git rm --cached filename
+
+# 🧪 Lab 2: Ignore Unwanted Files Using `.gitignore`
+
+This lab demonstrates how to use a `.gitignore` file to prevent unwanted files and folders (such as logs, build outputs, and environment variables) from being tracked by Git.
+
+---
+
+
+
